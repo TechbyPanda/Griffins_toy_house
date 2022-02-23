@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <%-include('../partial/_bootstrap.ejs')%>
+</head>
+
+<body>
+    <%- include('../partial/user_navigation.ejs')%>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 form_div">
+                    <form method="POST" action="/user/query">
+                        
+                        <div class="form-group">
+                            <label>query_box</label>
+                            
+                            <textarea id="query_box" name="query_box" rows="4" cols="50" class="form-control"></textarea>
+
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

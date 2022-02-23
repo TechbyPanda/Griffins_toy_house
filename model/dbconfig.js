@@ -1,10 +1,10 @@
 const mysql =require('mysql');
 const pool = mysql.createPool({
-    ConnectionLimit : 100,
+    connectionLimit : 100,
     host : 'localhost',
     user : 'root',
    password : 'root',
-   database : ' ',
+   database : 'toyHouse',
 });
-// database connectivity
+
 module.exports = pool;

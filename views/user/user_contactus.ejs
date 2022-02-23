@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <%-include('../partial/_bootstrap.ejs')%>
+</head>
+
+<body>
+    <%- include('../partial/user_navigation.ejs')%>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 form_div">
+                    <form method="POST" action="/user/contactus">
+                        <div class="form-group">
+                            <label>name</label>
+                            <input type="name" name="name" id="name" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>moblie</label>
+                            <input type="text" name="mobile" id="mobile" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>email</label>
+                            <input type="email" name="email" id="email" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label>comment_box</label>
+                            <!-- <input type="text" name="mobile" id="mobile" class="form-control" /> -->
+                            <textarea id="commentbox" name="commentbox" rows="4" cols="50" class="form-control"></textarea>
+
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
