@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <%- include('../partial/_bootstrap.ejs')%>
+    </head>
+    <body>
+        <div class="cantainer">
+            <table class="table">
+                <thead><tr><th>Sno.</th>
+                    <th>Product Name</th>
+                    <th>Category Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Description</th>
+                    <th>Add date</th>
+            
+                    <tbody>
+                        <%Sno=1%>
+                        <%for(product of productList){%>
+                            <tr id="row<%product.id%>">
+                                <th><%=Sno++%></th>
+                                <th><%=product.pname%></th>
+                                <th><%=product.pname%></th>
+                                <th><%=product.product_price%></th>
+                                <th><%=product.product_stock%></th>
+                                <th><%=product.description%></th>
+                                <th><%=product.date%></th>
+                                
+                    <th>
+                        <a href="/product/edit-product/<%=product.id%>">
+                        <button class="btn btn-primary">Edit</button>
+                    </a>
+                    </th>
+                    <th>  <a href="/delete">
+                        <button class="btn btn-danger">Delete</button>
+                    </a></th>
+                            </tr>
+                            <%}%>
+                    </tbody>
+            </table>
+        </div>
+       
+    </body>
+</html>

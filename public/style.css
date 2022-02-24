@@ -1,0 +1,166 @@
+
+    .container {
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+    }
+    .button{
+      background:#fff;
+      color:#34495e;
+      font-weight:bolder;
+      text-transform: uppercase;
+      font-size:18px;
+      border-radius: 5px;
+      margin-top:38px;
+      transition: 0.4s;
+
+    }
+    .button:hover{
+      background:#34495e;
+      color:#fff;
+    }
+    .popup{
+      background:rgb(0,0,0,0.6);
+      width:100%;
+      height:100%;
+      position:absolute;
+      display:none;
+     
+    }
+    .popup-content{
+    
+      margin-left: 500px;
+      height:auto;
+      width:700px;
+ background:#fff;
+  padding:24px;
+  position:relative;
+  border-radius:5px;
+    }
+    .close{
+      position:absolute;
+      top:-15px;
+      right:-15px;
+      background:#fff;
+      height:20px;
+      width:20px;
+      border-radius:50%;
+    }
+    @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Signika:400,700|Courgette);
+
+/* body{
+    height: 220vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #5baee6, #9249af);
+  } */
+/* label {
+    display: table-row;
+} */
+/* .container{
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  } */
+  .container .header{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+  }
+  .container .header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+  form .button input{
+    height: 100%;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  }
+  form .button input:hover{
+   background: linear-gradient(-235deg, #71b7e6, #9b59b6);
+   }
+   section {
+    margin: 0em auto 0;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  input {
+      display: block;
+      margin: .5em auto 0em;
+      padding: 0.5em 1em 0.5em 0.7em;
+      width: 100%;
+      border: none;
+      background: rgba(0,0,0,0.05);
+      color: rgba(0,0,0,0.8);
+      font-size: 2em;
+      line-height: 0;
+      transition: all .3s linear;
+  }
+  
+  input:hover, input:focus {
+    outline: 0;
+    transition: all .3s linear;
+    box-shadow: inset 0px 0px 10px rgb(177, 71, 71);
+  }
+  
+  meter {
+      /* Reset the default appearance */
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+              
+    margin: 0 auto 1em;
+    width: 100%;
+    height: .5em;
+      
+      /* Applicable only to Firefox */
+    background: none;
+    background-color: rgba(0,0,0,0.1);
+  }
+  
+  meter::-webkit-meter-bar {
+    background: none;
+    background-color: rgba(0,0,0,0.1);
+  }
+  
+  meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+  meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
+  meter[value="3"]::-webkit-meter-optimum-value { background: orange; }
+  meter[value="4"]::-webkit-meter-optimum-value { background: green; }
+  
+  meter[value="1"]::-moz-meter-bar { background: red; }
+  meter[value="2"]::-moz-meter-bar { background: yellow; }
+  meter[value="3"]::-moz-meter-bar { background: orange; }
+  meter[value="4"]::-moz-meter-bar { background: green; }
+  
+  .feedback {
+    color: #9ab;
+    font-size: 90%;
+    padding: 0 .25em;
+    font-family: Courgette, cursive;
+    margin-top: 1em;
+  }
+  
