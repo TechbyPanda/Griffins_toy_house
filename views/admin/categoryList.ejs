@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <%- include('../partial/_bootstrap.ejs')%>
+    </head>
+    <body>
+        <div class="cantainer">
+         <div class="form-group">
+            <div class="form-group">
+                <label>Category</label>
+                <select name="categoryName" class="form-control">
+                    <option value="0">select category</option>
+                    <%for(category of categoryList){%>
+                        <option onclick="return validateProduct()" value="<%= category.id%>"><%=category.category_name%></option>
+                        <%}%>
+                     <%if(true){%>
+                        <%for(product in productList){%>
+                            <label><%=product.id%></label>
+                            <table>
+                                <th>threaad</th>
+                            </table>>
+                            <%}%>
+                        
+                        <%}%>
+                           
+                </select>
+              </div>
+         </div>
+
+
+        </div>
+       <script>
+        function validateProduct() {
+            var status =true;
+            var id = document.getElementByValue()
+            return status;
+        }
+       </script>
+    </body>
+</html>
