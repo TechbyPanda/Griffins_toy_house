@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <%- include('../partial/_bootstrap.ejs')%>
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="/user/register" method="post">
+            <div class="content">
+                <h2 class="header">Registration Form</h2>
+
+                <div class="name">
+                    <label>Full Name</label>
+                    <input onkeyup="validateName()" type="text" id="fullName" spellcheck="false" data-ms-editor="true"
+                        name="name" placeholder="Full name" autocomplete="off" class="form-control autocompleteOff"
+                        required>
+                    <small id="nameError"></small>
+                </div>
+                <div class="number">
+                    <label>Mobile Number</label>
+                    <input onkeyup="validateMobile()" type="text" id="number" spellcheck="false" data-ms-editor="true"
+                        name="mobile" placeholder="Mobile Number" autocomplete="on" class="form-control" required>
+                    <small id="numberError"></small>
+                </div>
+                <div class="email">
+                    <label>Email Address</label>
+                    <input onkeyup="validateEmail()" type="email" id="email" spellcheck="false" data-ms-editor="false"
+                        name="email" placeholder="Email Address" autocomplete="off" class="form-control" required>
+                    <small id="emailError"></small>
+                </div>
+
+
+                <div class="password">
+                    <label for="password">Enter password</label>
+                    <input type="password" name="password" id="password" placeholder="Password" class="form-control"
+                        required>
+                    <p max="4" id="password-strength-meter"></p>
+                    <p id="password-strength-text"></p>
+                    <small id="showHidePass" onclick="showPassword()" class="text-primary">Show password</small>
+                </div>
+                <div class="confirmpassword">
+                    <label>Confirm Password</label>
+                    <input onkeyup="validateCPassword()" type="password" id="confirmPassword" spellcheck="false"
+                        data-ms-editor="true" placeholder="Confirm Password" autocomplete="on" class="form-control"
+                        required>
+                    <small id="confirmPasswordError"></small>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Register" onclick="return validateData()"
+                        class="btn btn-primary form-control">
+                </div>
+            </div>
+
+        </form>
+    </div>
+    </div>
+
+ <!-- <script type="text/javascript" src="./js/pass.js"></script>  -->
+  <script type="text/javascript" src="./js/script.js"></script>  
+    
+
+</body>
+
+</html>
