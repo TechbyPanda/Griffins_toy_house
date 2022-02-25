@@ -4,6 +4,6 @@ connectionLimit:100,
 host: 'localhost',
 user: 'root',
 password: 'root',
-database: 'toyhouse'
+database: 'toyHouse'
 });
 module.exports =pool;

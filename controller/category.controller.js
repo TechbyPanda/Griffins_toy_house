@@ -2,7 +2,8 @@ const Category = require('../model/category.model');
 const Product = require('../model/product.model');
 exports.addCategory = (request,response) => {
     let categoryName = request.body.category_name;
-    const category = new Category(categoryName);
+    let categoryImage = request.body.categoryImage;
+    const category = new Category(categoryName,categoryImage);
     category.save()
     .then(result => {
         response.send("<h1>successfully</h1>");
