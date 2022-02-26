@@ -23,7 +23,7 @@
 
       <li class="nav-item">
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mylogout">
+        <button type="button" class="btn btn-primary" >
           Logout
         </button>
 
@@ -33,20 +33,6 @@
   </div>
 </nav>
 
-<!-- ///// -->
-<div class="modal fade" id="mylogout">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <h1>Are you sure</h1>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <a href="/">
-          <button type="button" class="btn btn-danger"">Ok</button>
-        </a>
-        </div>
-      </div>
-    </div>
-  </div>
  
   
   <div class="modal fade" id="addCategory">
@@ -58,6 +44,7 @@
                   <h4 class="modal-title">ADD CATEGORY</h4>
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
+          
 
                 <!-- Modal body -->
                 <div class="modal-body">
@@ -67,6 +54,10 @@
                       <label>Category Name</label>
                       <input type="text" name="category_name" class="form-control" placeholder="Enter category name">
 
+                      <div class="form-group">
+                        <label>Category Image</label>
+                        <input type="file" name="categoryImage" class="form-control" placeholder=" Select category Image">
+  
                       
                       <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
