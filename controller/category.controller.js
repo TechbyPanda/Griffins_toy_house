@@ -1,8 +1,13 @@
 const Category = require('../model/category.model');
 const Product = require('../model/product.model');
 exports.addCategory = (request,response) => {
+  console.log(request.file);
+  console.log(request.body);
     let categoryName = request.body.category_name;
-    const category = new Category(categoryName);
+   
+    let categoryImage = request.file.filename;
+   
+    const category = new Category(categoryName,categoryImage);
     category.save()
     .then(result => {
         response.send("<h1>successfully</h1>");

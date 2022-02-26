@@ -1,8 +1,9 @@
 const pool = require("../util/database");
 
 module.exports = class Category {
-    constructor(categoryName) {
+    constructor(categoryName,categoryImage) {
         this.categoryName = categoryName;
+        this.categoryImage = categoryImage;
     }
     save() {
         return new Promise((resolve, reject) => {
@@ -11,8 +12,8 @@ module.exports = class Category {
                     reject(err);
                 }
                 else {
-                    let sql = "insert into categories(category_name) values(?)";
-                    con.query(sql, [this.categoryName], (err, result) => {
+                    let sql = "insert into categories(category_name,category_image) values(?,?)";
+                    con.query(sql, [this.categoryName,this.categoryImage], (err, result) => {
                         if (err)
                             reject(err);
                         else

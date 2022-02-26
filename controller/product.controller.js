@@ -24,14 +24,15 @@ exports.addProductPage = (request,response,next)=>{
   })
   .catch(err=>{
     console.log(err);
-    response.send("error found")
+    response.send("error found");
   });
 }
 exports.addProductPost=(request, response,next)=>{
   let productName = request.body.productName;
   console.log(request.body);
-  console.log(request.files);
-  console.log(request.files);
+   console.log(request.files);
+   console.log(request.files.length);
+
   let categoryName = request.body.categoryName;
   let productPrice = request.body.productPrice;
   let productQuantity = request.body.productQuantity;
@@ -63,7 +64,7 @@ exports.addProductPost=(request, response,next)=>{
     .catch(err => {
       response.send("<h1>error</h1>");
     })
-}
+ }
 
 // exports.getProductById = (request,response,next)=>{
 //   console.log("getproductbyid");

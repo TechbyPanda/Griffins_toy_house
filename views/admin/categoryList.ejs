@@ -11,7 +11,7 @@
                 <select name="categoryName" class="form-control">
                     <option value="0">select category</option>
                     <%for(category of categoryList){%>
-                        <option onclick="return validateProduct()" value="<%= category.id%>"><%=category.category_name%></option>
+                        <option onclick="validateProduct(this,<%=category.id%>)" value="<%= category.id%>"><%=category.category_name%></option>
                         <%}%>
                      <%if(true){%>
                         <%for(product in productList){%>

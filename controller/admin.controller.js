@@ -13,8 +13,7 @@ exports.loginPost = (request, response) => {
                 console.log(results);
                 return response.render('admin/admin.Dashboard.ejs'
                     //    title : "Admin Dashboard"
-                    
-                );
+                    );
     
             })
             .catch(err => {

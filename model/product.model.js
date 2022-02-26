@@ -13,25 +13,46 @@ module.exports = class Product {
     this.productAddDate= productAddDate;
         this.productIsDeleted = 0;
     }
-    static fetchProduct() {
-        return new Promise((resolve, reject) => {
-            pool.getConnection((err, con) => {
-                if (!err) {
-                    let sql = "select * from product";
-                    con.query(sql, (err, results) => {
-                        if (err) reject(err);
-                        else resolve(results);
-                    });
-                }
-                else
-                    reject(err);
-            });
-        })
-    }
+    // static fetchProduct() {
+    //     return new Promise((resolve, reject) => {
+    //         pool.getConnection((err, con) => {
+    //             if (!err) {
+    //                 let sql = "select * from product";
+    //                 con.query(sql, (err, results) => {
+    //                     if (err) reject(err);
+    //                     else resolve(results);
+    //                 });
+    //             }
+    //             else
+    //                 reject(err);
+    //         });
+    //     })
+    // }
+    static fetchAllProduct(currentUserId){
+        return new Promise((resolve,reject)=>{
+          pool.getConnection((err,con)=>{
+            if(!err){
+              let sql ="";
+               if(currentUserId){
+                sql = "select product.id,product.pname,product.product_price,product.product_stock,product.description,product.frontview,cart.productId from product left outer join cart on product.id=cart.productId and cart.userId="+currentUserId;
+               }
+               else
+                sql = "select * from product";
+              con.query(sql,(err,queryResults)=>{
+                con.release();
+                err ? reject(err) : resolve(queryResults);
+              });
+            }
+            else
+              reject(err);
+          })
+        });
+      }
     save() {
         return new Promise((resolve, reject) => {
             pool.getConnection((err, con) => {
                 console.log("connection success");
+                
               if(!err){  
                let sql = "insert into product(pname,category_id,product_price,product_stock,frontview,backview,leftview,rightview,description,date,isdeleted) values(?,?,?,?,?,?,?,?,?,?,?)";
             con.query(sql,[this.productName,

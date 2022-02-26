@@ -1,7 +1,101 @@
 <html>
       <head><%- include('./partial/_bootstrap.ejs')%></head>
-
+<style>
+ a{
+   
+   width:100px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+     border-radius: 20px;
+   border: 2px solid #9249af;
+    padding:20px;
+ }
+ a:hover{
+   background: linear-gradient(135deg, #5baee6, #9249af);
+   color: white;
+ }
+ li{
+   margin:20px;
+   padding:10px;
+  
+ } 
+ right{
+   margin-left: 100%;
+   padding:400px;
+ }
+ 
+ 
+  
+</style>
     <body>
         <%- include('./partial/_navigation.ejs')%>
-        <h1>it is home page</h1></body>
+       <div class="container">
+         <div class="row my-4">
+        
+         </div>
+       </div>
+       <div class="cantainer my-2">
+          <div class="row">
+        <%for(product of productList){%>
+          <div class="col-md-3 mt-2">
+            <div class="card">
+              <img class="card-img-top"  src="images/<%=product.frontview%>" alt="Card image" width="200px" height="200px">
+
+               <div class="card-body">
+                <h4 class="card-title text-center"><%=product.pname%></h4>
+                <p class="card-text text-center"><%=product.description%></p>
+                <div>
+                  <%if(product.productId){%>
+                    <button onclick="addToCart(this,'<%=isLoggedIn%>','<%=product.id%>')" class="btn btn-primary">Remove From Cart</button>
+                  <%}else{%>  
+                    <button onclick="addToCart(this,'<%=isLoggedIn%>','<%=product.id%>')" class="btn btn-primary">Add To Cart</button>
+                  <%}%>
+                  <button onclick="addToCart(this,'<%=isLoggedIn%>','<%=product.id%>')" class="btn btn-success">Favorite</button>
+                </div>    
+              </div> 
+            </div>
+          </div>
+          <%}%>
+        </div>
+         </div>    
+
+
+       </div>
+       <script>
+        function addToCart(button,isLoggedIn,pid){
+         // var buttonText = button.innerText;
+            // console.log(buttonText);
+            
+             if(isLoggedIn){
+            var buttonText = button.innerText;
+            alert(buttonText)
+            if(buttonText == "Add To Cart"){
+              alert("match");
+               $.ajax({
+                url: "/cart/add-to-cart",
+                 success: function(result){
+                  alert("Item Added In Cart");
+                 button.innerText = "Remove From Cart";
+                 }
+               });
+              
+            }
+            else if(buttonText == "Remove From Cart"){
+              $.ajax({
+                url: "/cart/remove-from-cart/"+pid,
+                success: function(result){
+                  alert("Item Removed From Cart..");
+                  button.innerText = "Add To Cart";
+                }
+              });
+            }
+          }
+       
+             window.location.href = "/user/login";
+        }
+      </script>
+       </body>
+       
 </html>
